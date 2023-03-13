@@ -16,7 +16,7 @@ class Block{
 
 class Blockchain{
     constructor(){
-        this.chain = [];
+        this.chain = [this.createGenesisBlock()];
     }
 
     createGenesisBlock(){
@@ -34,3 +34,10 @@ class Blockchain{
         this.chain.push(newBlock);
     }
 }
+
+// test
+let BBC_coin = new Blockchain();
+BBC_coin.addBlock(new Block(1, "03/13/2023", {amount: 420}));
+BBC_coin.addBlock(new Block(2, "4/20/2023", {amount: 69}));
+
+console.log(JSON.stringify(BBC_coin, null, 4));
